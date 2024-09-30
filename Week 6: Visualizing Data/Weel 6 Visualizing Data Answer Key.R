@@ -37,10 +37,23 @@ ggplot(data=data) +
 ggplot(data=data) +
   geom_bar(mapping = aes(x=TreatyCount),
                  fill = 'darkgoldenrod', color = 'black', na.rm = T) + 
-  xlab('Polity2 Score') + 
+  xlab('Treaty Count') + 
   ylab('Frequency') + 
   ggtitle('Figure 2: Total Number of Human Rights Treaties Signed') +
   theme_bw()
+
+# Bar Graph Factoring 
+ggplot(data=data) +
+  geom_bar(mapping = aes(x=TreatyCount, fill = as.factor(democracy)),
+           color = 'black', na.rm = T) + 
+  xlab('Number of Treaties Signed') + 
+  ylab('Frequency') + 
+  ggtitle('Figure 3: Total Number of Human Rights Treaties Signed by Democracy Score') +
+  scale_fill_manual(name = 'Democracy vs Autocracy', 
+                     values = c("0" = "red", "1" = "blue", 'NA' = 'white'), 
+                     labels = c('Non-Democracy', 'Democracy', 'Missing')) +
+  theme_bw()
+
 
 # The second way is having each bar stacked on top of each other
 ggplot(data=data) +
@@ -72,7 +85,7 @@ ggplot(data = data) +
 ## We do this by using the group aesthetic. 
 
 ggplot(data = data) +
-  geom_point(mapping = aes(x=polity2, y=respectHR, 
+  geom_point(mapping = aes(x=TreatyCount, y=respectHR, 
              color = as.factor(democracy)), na.rm = T) + 
   xlab("Polity Scores") +
   ylab("Respect for Human Rights") +
