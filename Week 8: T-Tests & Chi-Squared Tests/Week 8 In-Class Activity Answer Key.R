@@ -87,6 +87,8 @@ table(data$PR, data$female_seats_15)
 
 # cross-tabulation table
 table(data$PR, data$female_seats_15) 
+
+# Chi-Square Test
 chisq.test(data$PR, data$female_seats_15, correct = FALSE)
 
 ### Can we reject the null? What does it mean if we do? 
