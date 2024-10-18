@@ -1,0 +1,13 @@
+Continue working on your code book and data description. 
+
+The quick shortcut for finding the range of values your variable takes on is the summary() function in R.
+E.g. 
+
+summary(dataframe$variable) 
+
+The quick shortcut for finding the number of unique values that a variable can take on is the unique() function in R.
+E.g. 
+
+unique(dataframe$variable) 
+
+For the final project, you need 1 independent variable, 1 dependent variable, and 3 control variables.
